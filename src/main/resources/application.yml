@@ -1,3 +1,4 @@
+
 server:
   port: 0
   servlet:
@@ -17,3 +18,13 @@ api:
 spring:
   application:
     name: Message Broker Service Example
+  rabbitmq:
+    listener:
+      direct:
+        default-requeue-rejected: false
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 2
+          multiplier: 1.5
+          max-interval: 5000

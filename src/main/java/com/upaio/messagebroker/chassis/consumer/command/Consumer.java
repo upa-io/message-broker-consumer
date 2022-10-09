@@ -15,12 +15,12 @@ public class Consumer {
 
     @RabbitListener(queues = MessageBrokerConfiguration.QUEUE_NAME)
     public void consumeMessage(ObjectMessageDTO objectMessageDTO) throws ExampleException {
-        log.info("Consumed Message: " + objectMessageDTO);
-        try {
-            Thread.sleep(8 * 1000);
-        } catch (InterruptedException ie) {
-            Thread.currentThread().interrupt();
-        }
+        log.info("Consumed Message: {}", objectMessageDTO);
+//        try {
+//            Thread.sleep(8 * 1000);
+//        } catch (InterruptedException ie) {
+//            Thread.currentThread().interrupt();
+//        }
         if (new Random().nextBoolean()) {
             throw new ExampleException("Error Generic " + objectMessageDTO.getMessage());
         }

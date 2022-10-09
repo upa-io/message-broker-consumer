@@ -1,8 +1,7 @@
-
 server:
   port: 0
   servlet:
-    context-path: /service-bus-broker
+    context-path: /service-bus-broker-consumer
 management:
   endpoints:
     web:
@@ -11,13 +10,9 @@ management:
   endpoint:
     health:
       show-details: always
-api:
-  title: Message Broker Service Example
-  version: v1
-  description: REST API Services for Message Broker
 spring:
   application:
-    name: Message Broker Service Example
+    name: Message Broker Service Chassis Consumer
   rabbitmq:
     listener:
       direct:
@@ -28,3 +23,7 @@ spring:
           max-attempts: 2
           multiplier: 1.5
           max-interval: 5000
+opentracing:
+  jaeger:
+    http-sender:
+      url: http://localhost:14268/api/traces

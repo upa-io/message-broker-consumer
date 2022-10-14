@@ -21,7 +21,7 @@
         <java.version>18</java.version>
         <!-- Third party dependencies -->
         <project.springdoc-openapi-ui.version>1.6.10</project.springdoc-openapi-ui.version>
-
+        <project.opentracing-spring-jaeger-cloud-starter.version>3.3.1</project.opentracing-spring-jaeger-cloud-starter.version>
     </properties>
 
     <dependencies>
@@ -79,7 +79,7 @@
         <dependency>
             <groupId>io.opentracing.contrib</groupId>
             <artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
-            <version>3.3.1</version>
+            <version>${project.opentracing-spring-jaeger-cloud-starter.version}</version>
         </dependency>
     </dependencies>
 
